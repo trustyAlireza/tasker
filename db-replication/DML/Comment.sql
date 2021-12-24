@@ -1,0 +1,22 @@
+CREATE TABLE Comment
+(
+ CID      int NOT NULL,
+ Deletion boolean NOT NULL,
+ JID      int NOT NULL,
+ UID      int NOT NULL,
+ DoI      date NULL,
+ Content  text NOT NULL,
+ CONSTRAINT PK_110 PRIMARY KEY ( CID ),
+ CONSTRAINT FK_114 FOREIGN KEY ( UID ) REFERENCES "User" ( UID ),
+ CONSTRAINT FK_117 FOREIGN KEY ( JID ) REFERENCES Job ( JID )
+);
+
+CREATE INDEX FK_116 ON Comment
+(
+ UID
+);
+
+CREATE INDEX FK_119 ON Comment
+(
+ JID
+);

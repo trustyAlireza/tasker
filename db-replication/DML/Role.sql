@@ -1,0 +1,7 @@
+CREATE TABLE Role
+(
+ RID   int NOT NULL,
+ Code  int NOT NULL,
+ Label text NOT NULL,
+ CONSTRAINT PK_74 PRIMARY KEY ( RID )
+);
