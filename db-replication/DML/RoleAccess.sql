@@ -1,0 +1,19 @@
+CREATE TABLE RoleAccess
+(
+ RAID     int NOT NULL,
+ AccessID int NOT NULL,
+ RoleID   int NOT NULL,
+ CONSTRAINT PK_88 PRIMARY KEY ( RAID ),
+ CONSTRAINT FK_89 FOREIGN KEY ( AccessID ) REFERENCES Access ( AID ),
+ CONSTRAINT FK_92 FOREIGN KEY ( RoleID ) REFERENCES Role ( RID )
+);
+
+CREATE INDEX FK_91 ON RoleAccess
+(
+ AccessID
+);
+
+CREATE INDEX FK_94 ON RoleAccess
+(
+ RoleID
+);

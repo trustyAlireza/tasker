@@ -1,0 +1,20 @@
+CREATE TABLE JobAssignee
+(
+ JAID    int NOT NULL,
+ JobID   int NOT NULL,
+ UserID  int NOT NULL,
+ isValid boolean NOT NULL,
+ CONSTRAINT PK_100 PRIMARY KEY ( JAID ),
+ CONSTRAINT FK_101 FOREIGN KEY ( JobID ) REFERENCES Job ( JID ),
+ CONSTRAINT FK_104 FOREIGN KEY ( UserID ) REFERENCES "User" ( UID )
+);
+
+CREATE INDEX FK_103 ON JobAssignee
+(
+ JobID
+);
+
+CREATE INDEX FK_106 ON JobAssignee
+(
+ UserID
+);
